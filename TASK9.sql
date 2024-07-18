@@ -20,7 +20,7 @@ BEGIN
  select SUM(sales), SUM(profit) INTO total_sales, total_profit
     from sales where sales.product_id = product_id_input;
     if 
-		total_sales > 0 THEN
+	total_sales > 0 THEN
         profit_percentage := (total_profit / total_sales) * 100;
     else
         profit_percentage := 0;
