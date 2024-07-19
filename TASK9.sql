@@ -11,11 +11,11 @@ where product_id = 'FUR-TA-10000577'
 
 
 create function total_sales_data(product_id_input varchar)
-RETURNS table (
+RETURNS double precision AS $$
+    DECLARE
     total_sales double precision,
     total_profit double precision,
     profit_percentage double precision
-) AS $$
 BEGIN
  select SUM(sales), SUM(profit) INTO total_sales, total_profit
     from sales where sales.product_id = product_id_input;
